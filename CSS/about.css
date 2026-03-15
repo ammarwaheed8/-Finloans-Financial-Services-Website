@@ -1,0 +1,1126 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+*:hover {
+    transition: all 0.4s ease-in-out 0.1ms;
+}
+
+*:not(:hover) {
+    transition: all 0.4s ease-in-out 0.1ms;
+}
+
+.section-main-bar {
+    width: 60px;
+    height: 3px;
+    margin: 0 auto 6px auto;
+    background-color: #33D4D6;
+}
+
+.section-main-heading {
+    font-size: 44px;
+    font-weight: 400;
+    margin: 0 0 15px 0;
+    color: #000000CC;
+    text-align: center;
+}
+
+.section-main-para {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 0 15px 0;
+    color: #7A838B;
+    text-align: center;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(100px); 
+    transition: opacity 1.2s ease-in-out, transform 1s ease-in-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Navbar Styling CSS --- */
+
+.appointment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0 30px;
+}
+
+#contact-no {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+#contact-no i {
+    font-size: 12px;
+    margin: 0 6px 0 0;
+}
+
+#apply-btn {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #33D4D6;
+    border: 1px solid #33D4D6;
+}
+
+#apply-btn:hover {
+    color: #ffffff;
+    background-color: #33D4D6;
+}
+
+.drop-menu {
+    width: 100px;
+    height: 70px;
+    gap: 10px 0;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    transform: translateY(70px);
+    opacity: 0;
+}
+
+.drop-btn:hover .drop-menu {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.4s ease-in-out 0.1ms;
+}
+
+.drop-down-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+@media screen and (max-width: 1216px){
+    .appointment {display: none;}
+}
+
+.header {
+    background-color: #020202;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+  
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #020202;
+}
+  
+.header li a {
+    color: #33D4D6;
+    display: block;
+    padding: 20px 20px;
+    border-right: 1px solid #020202;
+    text-decoration: none;
+    transition: color ease-in-out 0.3s 0.1ms;
+    
+}
+  
+.header li a:hover,
+.header .menu-btn:hover {
+    color: #33D4D6!important;
+}
+  
+/* menu */
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+  
+/* menu icon */
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 23px 20px 30px 43px;
+    position: relative;
+    user-select: none;
+}
+  
+.header .menu-icon .navicon {
+    background: #33D4D6;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+  
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: #33D4D6;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+  
+.header .menu-icon .navicon:before {
+    top: 5px;
+}
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+}
+  
+/* menu btn */
+  
+.header .menu-btn {
+    display: none;
+}
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 340px;
+}
+  
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+  
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+  
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+  
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+/*  hamburger media query */
+@media (min-width: 991px) {
+
+    .header li {
+        float: left;
+    }
+        
+    .header li a {
+        padding: 15px 25px;
+    }
+    
+    .header .menu {
+        margin: 70px 0 0 0;
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    
+    .header .menu-icon {
+        display: none;
+    }
+    
+    .header {
+        background-color: transparent;
+        margin: 30px auto 0 auto;
+        width: 90%;
+        height: 55px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header ul {
+        background-color: transparent;
+    }
+    
+    .header li a {
+        border-right: 1px solid #02020200;
+        font-size: 14px;
+        color: #ffffff;
+        font-weight: 500;
+    }
+    .header li a i {
+        font-size: 11px;
+        margin: 0 0 0 4px;
+    }
+    
+    }
+    
+
+/* ------ Section-1 Styling CSS ------ */
+#section-1 {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/about-bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.sec-1-container {
+    width: 65%;
+    margin: 130px auto 0 auto;
+}
+
+#sec-1-heading {
+    font-size: 60px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+
+/* ------ Section-2 Styling CSS ------ */
+#section-2 {
+    width: 100%;
+    height: fit-content;
+    padding: 150px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.sec-2-container-1, .sec-2-container-2 {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 40px 0 0 0;
+    gap: 95px;
+}
+
+/* .sec-2-container-1 styling */
+.service {
+    width: 350px;
+    height: 560;
+    border-radius: 5px;
+    background: #0a8cff;
+    background: -moz-linear-gradient(top, #0a8cff 0%, #054680 100%);
+    background: -webkit-linear-gradient(top, #0a8cff 0%, #054680 100%);
+    background: linear-gradient(to bottom, #0a8cff 0%, #054680 100%);
+}
+
+.service-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.service-img {
+    width: 68px;
+    height: 68px;
+    margin: 40px;
+}
+
+.service-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-hero h3 {
+    font-size: 16px;
+    font-size: 400;
+    margin: 0 0 15px 0;
+    color: #ffffff;
+}
+
+.service-hero h2 {
+    font-size: 30px;
+    font-size: 400;
+    margin: 0 0 8px 0;
+    color: #33D4D6;
+}
+
+.service-details {
+    border-top: 1px solid rgb(141, 192, 248);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 50px 50px 50px;
+}
+
+.service-details ul li {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 0 23px 0;
+    color: #ffffff;
+}
+
+.service-details ul li::marker {
+    font-size: 22px;
+    color: #33D4D6;
+}
+
+.service-details a {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 11px 30px;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    text-decoration: dashed;
+    color: #ffffff;
+    background-color: #33D4D6;
+    border: 2px solid #33D4D6;
+}
+
+.service-details a:hover {
+    color: #33D4D6;
+    background: transparent;
+    border: 2px solid #33D4D6;
+}
+
+/* .sec-2-container-2 styling */
+#sec-2-img {
+    background-color: rgba(203, 203, 203, 0.672);
+    width: 540px;
+    height: 590px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.sec-2-info-cont {
+    width: 540px;
+    height: 420px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.sec-2-info-cont h2 {
+    font-size: 44px;
+    font-weight: 400;
+    margin: 0 0 15px 0;
+    color: #001D38;
+}
+
+.sec-2-info-cont p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #7A838B;
+    margin: 0 0 13px 0;
+}
+
+.sec-2-info-cont ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.sec-2-info-cont ul li {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 0 23px 0;
+    color: #001D38;
+}
+
+.sec-2-info-cont ul li::marker {
+    font-size: 22px;
+    color: #33D4D6;
+}
+
+.sec-2-info-cont a {
+    width: 130px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 11px 30px;
+    color: #ffffff;
+    background-color: #33D4D6;
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    border: 2px solid #33D4D6;
+}
+
+.sec-2-info-cont a:hover {
+    color: #33D4D6;
+    background: transparent;
+    border: 2px solid #33D4D6;
+}
+
+/* ------ Section-3 Styling CSS ------ */
+#section-3 {
+    width: 100%;
+    min-height: 75vh;
+    height: fit-content;
+    padding: 192px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f5fbff;
+}
+
+.sec-3-container {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 0 0;
+    padding: 15px;
+    gap: 60px;
+}
+
+.work {
+    max-width: 315px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 5px;
+}
+
+.work span {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: 600;
+    display: grid;
+    place-items: center;
+    color: #0A8CFF;
+    background-color: #DDF0FF;
+}
+
+.work h3 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #040E27;
+    margin: 20px 0 15px 0 ;    
+}
+
+.work p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #7A838B;
+    margin: 0 0 13px 0;
+}
+
+
+/* ------ Section-4 Styling CSS ------ */
+#section-4 {
+    width: 100%;
+    height: fit-content;
+    padding: 192px 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.sec-4-faq {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 40px 0;
+    padding: 10px;
+}
+
+#sec-4-faq-img {
+    width: fit-content;
+    height: fit-content;
+}
+
+#sec-4-faq-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.sec-4-faq-area {
+    width: 100%;
+    height: 100%;
+    padding: 60px 50px;
+}
+
+#faq-heading {
+    font-size: 44px;
+    font-weight: 400;
+    margin: 0 0 50px 0;
+    color: #292c2c;
+}
+
+.faq-cards {
+    border-bottom: 1px solid rgb(211 211 211 / 65%);
+    max-width: 415px;
+    height: 44px;
+    padding: 5px;
+    overflow: hidden;
+    margin: 0 0 20px 0;
+}
+
+.faq-cards:hover{
+    height: 100px;
+    transition: all 0.4s ease-in-out 0.1ms;
+}
+
+.faq-card-heading {
+    font-size: 18px;
+    font-weight: 400;
+    padding: 6px 12px;
+    color: #0f2137;
+}
+
+.faq-card-heading i {
+    color: #0f2137;
+    margin: 0 10px 0 0;
+}
+
+.faq-card-para {
+    font-size: 15px;
+    font-weight: 300;
+    padding: 10px 30px 32px 30px;
+    color: #7b8180;
+}
+
+.sec-4-carousel {
+    width: 100%;
+    min-height: 333px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    width: 962px;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+@keyframes display {
+    0% {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+    10% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    30% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+}
+
+.carousel > span {
+    position: absolute;
+    top: 0;
+    left: calc(10% - 96px);
+    opacity: 0;
+    animation: display 16s infinite;
+}
+  
+span:nth-child(2) {
+    animation-delay: 4s;
+}
+span:nth-child(3) {
+    animation-delay: 8s;
+}
+span:nth-child(4) {
+    animation-delay: 12s;
+}
+  
+
+.frame {
+    width: 960px;
+    height: 238px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.person-img {
+    background: url("../img/sec-4-person.jpg");
+    width: 228px;
+    height: 228px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.person-img i {
+    top: 160px;
+    left: 168px;
+    font-size: 20px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    position: relative;
+    color: #ffffff;
+    background-color: #33D4D6;
+    display: grid;
+    place-items: center;
+}
+
+.person-review {
+    max-width: 690px;
+    height: fit-content;
+    padding: 5px;
+}
+
+.person-review p {
+    font-size: 19px;
+    font-weight: 400;
+    margin: 0 0 22px 0;
+    color: #040E27;
+}
+
+.person-review span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #7A838B;
+}
+
+.sec-4-brands-area {
+    width: 100%;
+    height: fit-content;
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-img {
+    width: 200px;
+    height: auto;
+}
+
+
+/* ------ Section-5 Styling CSS ------ */
+#section-5 {
+    width: 100%;
+    min-height: 386px;
+    height: fit-content;
+    padding: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/sec-5-bg.jpg');  
+    background-size: cover;
+}
+
+#section-5 p {
+    max-width: 730px;
+    width: fit-content;
+    font-size: 44px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.blue-btn {
+    width: 156px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 16px 32px;
+    color: #ffffff;
+    background-color: #33D4D6;
+    border: 2px solid #33D4D6;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* ------ Footer CSS Styling ------*/
+footer {
+    width: 100%;
+    height: fit-content;
+    padding: 80px;
+    background-color: #ffffff;
+    color: #7A838B;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.upper-footer-content {
+    width: fit-content;
+    height: fit-content;
+    padding: 15px;
+    gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-content-container {
+    width: 194px;
+    height: fit-content;
+    padding: 7px;
+    margin: 40px 0 0 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    overflow: hidden;
+    color: #a0a0b4;
+}
+
+.footer-content-container:nth-child(1){
+    margin: 40px 30px 0 0;
+}
+
+.footer-p {
+    margin: 0 0 10px 0;
+    line-height: 24px;
+}
+
+#footer-logo {
+    width: 149px;
+    margin: 0 0 30px 0;
+}
+
+.container-container-heading {
+    color: #1f1f1f;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 12px 0 48px 0;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.social-links a {
+    height: 40px;
+    width: 40px;
+    margin: 7px;
+    border: 1px solid #7a838b59;
+    background-color: #ffffff1A;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.footer-contact-links {
+    color: #7A838B;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 400;
+    margin: 0 0 28px 0;
+}
+
+.footer-contact-links i {
+    margin: 0 7px 9px 0;
+}
+
+.news-letter {
+    max-width: 350px;
+    width: fit-content;
+}
+
+
+#email {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    padding-left: 20px;
+    font-size: 15px;
+    color: #040E27;
+    border: none;
+    border: 1px solid #E8E8E8;
+    border-radius: 5px;
+}
+
+#email-btn {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 103px;
+    height: 40px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    background: #0A8CFF;
+    padding: 0 22px;
+    cursor: pointer;
+    border-radius: 5px;
+    top: -45px;
+    right: -227px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#Copyright-bar {
+    margin: 50px auto 0 auto;
+    text-align: center;
+    line-height: 25px;
+}
+
+#Copyright-bar a {
+    color: #33D4D6;
+    text-decoration: none;
+}
+
+/* --------- Media Query of Max width of 992px --------- */
+@media screen and (max-width: 991px){
+/* --- Navbar --- */
+.header {
+    max-width: 991px;
+    padding: 10px 0 0 18px;
+}
+
+.drop-menu {display: none;}
+
+/* ------ Section-1 Styling CSS ------ */
+.sec-1-container {
+    gap: 5px 150px;
+    width: fit-content;
+    height: fit-content;
+    margin: 65px auto 0 auto;
+    padding: 40px;
+}
+
+.sec-1-container {
+    width: 80%;
+    margin: 170px auto 0 auto;
+}
+
+/* ------ Section-4 Styling CSS ------ */
+/* sec-2-container-2 styling */
+#sec-2-img {
+    width: 100%;
+    height: 590px;
+}
+
+.sec-2-info-cont {
+    width: 100%;
+    min-height: 420px;
+    height: fit-content;
+}
+
+/* ------ Section-4 Styling CSS ------ */
+#section-4 {padding: 40px 0;}
+
+.sec-4-faq-area {padding: 60px 20px;}
+
+#faq-heading {margin: 0 0 50px 0;}
+
+.faq-cards {height: 50px;}
+
+.faq-cards:hover{height: 140px;}
+
+.carousel {
+    width: 747px;
+    height: 240px;
+}
+
+.carousel > span {
+    left: calc(13% - 96px);
+}
+
+.frame {
+    width: 745px;
+    height: 238px;
+}
+
+.person-review {
+    width: 470px;
+}
+
+/* ------ Section-5 Styling CSS ------ */
+#section-5 {padding: 80px;}
+
+#section-5 p {text-align: center;}
+
+}
+
+
+/* --------- Media Query of Max width of 767px --------- */
+@media screen and (max-width: 766px){
+/* ------ Section-4 Styling CSS ------ */
+.sec-4-faq {flex-wrap: wrap;}
+
+.sec-4-faq-area {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+}
+
+#faq-heading {margin: 0 0 50px 0;}
+
+.faq-cards:hover{height: 140px;}
+.carousel {
+    width: 550px;
+    height: 420px;
+}
+
+.carousel > span {
+    left: calc(18% - 98px);
+    flex-direction: column;
+}
+
+.frame {
+    width: 548px;
+    height: 420px;
+}
+
+.person-review {
+    width: 547px;
+}
+
+/* ------ Footer CSS Styling ------*/
+footer {
+    padding: 86px 40px;
+}
+
+.upper-footer-content {
+    justify-content: center;
+}
+
+.footer-content-container {
+    width: 100%;
+}
+
+}
+
+
+/* --------- Media Query of Max width of 576px --------- */
+@media screen and (max-width: 576px){
+/* ------ Section-1 Styling CSS ------ */
+#sec-1-heading {font-size: 40px;}
+
+/* ------ Section-4 Styling CSS ------ */
+#faq-heading {margin: 0 0 50px 0;}
+
+.faq-cards:hover{height: 140px;}
+
+
+/* ------ Section-2 Styling CSS ------ */
+/* sec-2-container-1 styling */
+.service {
+    width: 330px;
+    height: 560;
+}
+
+/* ------ Section-4 Styling CSS ------ */
+.carousel {
+    width: 389px;
+    height: 450px;
+}
+
+.carousel > span {
+    left: calc(26% - 100px);
+    flex-direction: column;
+}
+
+.frame {
+    width: 386px;
+    height: 450px;
+}
+
+.person-review {
+    width: 386px;
+}
+
+/* ------ Footer CSS Styling ------*/
+#email-bar {
+    margin: 0 0 30px 0;
+}
+
+#email-btn {
+    top: 10px;
+    right: 0px;
+}
+
+}
+
+
+/* --------- Media Query of Max width of 390px --------- */
+@media screen and (max-width: 389px){
+/* ------ Section-4 Styling CSS ------ */
+.carousel {
+    width: 337px;
+    height: 470px;
+}
+
+.carousel > span {
+    left: calc(30% - 100px);
+    flex-direction: column;
+}
+
+.frame {
+    width: 335px;
+    height: 470px;
+}
+
+.person-review {
+    width: 334px;
+}
+
+/* ------ Footer CSS Styling ------*/
+footer {
+    padding: 76px 30px;
+}
+    
+}
