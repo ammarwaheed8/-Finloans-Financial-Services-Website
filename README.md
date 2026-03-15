@@ -100,10 +100,10 @@ Since this is a plain HTML/CSS/JS project, no build tools or installations are n
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/finloans.git
+git clone https://github.com/ammarwaheed8/-Finloans-Financial-Services-Website.git
 
 # Navigate into the folder
-cd finloans
+cd Finloans-Financial-Services-Website
 
 # Open index.html in your browser
 # (Double-click it, or use Live Server in VS Code)
@@ -116,8 +116,9 @@ cd finloans
 ## 👤 Author
 
 **Your Name**
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [your-linkedin](https://linkedin.com/in/your-profile)
+- Live Site Link: [@Finloan](https://finloan-ammarwaheed.netlify.app/)
+- GitHub: [@Ammar Waheed](https://github.com/ammarwaheed8)
+- LinkedIn: [Ammar Waheed](https://linkedin.com/in/ammar-waheed-a6a50b258)
 - Internship: Ezitech Institute, Pakistan
 
 ---
